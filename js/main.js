@@ -12,7 +12,8 @@ function funToday() {
         hour = 'час';
     }
     let formatFirst = `Сегодня ${week[today.getDay()]}, ${today.getDate()} ${nameMonth[today.getMonth()]} ${today.getFullYear()} года, ${today.getHours()} ${hour} ${today.getMinutes()} минут ${today.getSeconds()} секунды`;
-    console.log(formatFirst);
+    document.write(formatFirst);
+    document.write('<br>');
 }; 
 
 setInterval(funToday, 1000);
@@ -21,6 +22,7 @@ setInterval(funToday, 1000);
 function funTodayNewFormat() {
     let today = new Date();
     const todayNewFormat = ('0' + today.getDate()).slice(-2)+'.'+('0'+ (today.getMonth()+1)).slice(-2)+'.'+today.getFullYear()+' - '+ today.toLocaleTimeString();
-    console.log(todayNewFormat);
+    document.write(todayNewFormat);
+    document.write('<br>');
 };
 setInterval(funTodayNewFormat,1000);
