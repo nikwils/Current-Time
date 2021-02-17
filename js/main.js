@@ -1,6 +1,6 @@
-let div = document.createElement('div');
-let myDiv = document.querySelector('div');
-setInterval(function funToday() {
+
+function funToday() {
+    let myDiv = document.querySelector('div');
     let today = new Date();
     const week = ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'];
     const nameMonth =['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря',]; 
@@ -14,17 +14,19 @@ setInterval(function funToday() {
     }
     let formatFirst = `Сегодня ${week[today.getDay()]}, ${today.getDate()} ${nameMonth[today.getMonth()]} ${today.getFullYear()} года, ${today.getHours()} ${hour} ${today.getMinutes()} минут ${today.getSeconds()} секунды`;
 
-  document.myDiv.innerHTML = formatFirst;
+    myDiv.innerHTML = formatFirst;
 
-}, 1000);
+};
+
+setInterval(funToday, 1000);
 
 
 
 
 function funTodayNewFormat() {
+    let myDiv2 = document.querySelector('.div2');
     let today = new Date();
     const todayNewFormat = ('0' + today.getDate()).slice(-2)+'.'+('0'+ (today.getMonth()+1)).slice(-2)+'.'+today.getFullYear()+' - '+ today.toLocaleTimeString();
-    document.write(todayNewFormat);
-    document.write('<br>');
+    myDiv2.innerHTML = todayNewFormat;
 };
-// setInterval(funTodayNewFormat,1000);
+setInterval(funTodayNewFormat,1000);
