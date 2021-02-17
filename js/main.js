@@ -1,5 +1,6 @@
-
-function funToday() {
+let div = document.createElement('div');
+let myDiv = document.querySelector('div');
+setInterval(function funToday() {
     let today = new Date();
     const week = ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'];
     const nameMonth =['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря',]; 
@@ -12,11 +13,12 @@ function funToday() {
         hour = 'час';
     }
     let formatFirst = `Сегодня ${week[today.getDay()]}, ${today.getDate()} ${nameMonth[today.getMonth()]} ${today.getFullYear()} года, ${today.getHours()} ${hour} ${today.getMinutes()} минут ${today.getSeconds()} секунды`;
-    document.write(formatFirst);
-    document.write('<br>');
-}; 
 
-setInterval(funToday, 1000);
+  document.myDiv.innerHTML = formatFirst;
+
+}, 1000);
+
+
 
 
 function funTodayNewFormat() {
@@ -25,4 +27,4 @@ function funTodayNewFormat() {
     document.write(todayNewFormat);
     document.write('<br>');
 };
-setInterval(funTodayNewFormat,1000);
+// setInterval(funTodayNewFormat,1000);
